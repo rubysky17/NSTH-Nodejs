@@ -1,0 +1,22 @@
+extends layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/add-product.css")
+    link(rel="stylesheet", href="/css/global.css")
+
+block content 
+    main
+        h1 Sản phẩm của tôi 
+        p Danh sách sảng phẩm
+            
+        if prods.length > 0
+            div.wrapper-card
+                each product in prods
+                    div.card.container-card
+                        h1.title-card #{product.title}
+                        img.img-fluid(src="https://i.pinimg.com/736x/5f/82/fa/5f82faacd6b544ad86d2fc3fe9e8c431.jpg", alt="https://i.pinimg.com/736x/5f/82/fa/5f82faacd6b544ad86d2fc3fe9e8c431.jpg")
+                        p.description-card Đây là cái card
+                        button.btn-card Mua ngay
+        else 
+            h1 Không có sản phẩm nào để hiển thị
+

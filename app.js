@@ -6,7 +6,7 @@ const expressHbs = require("express-handlebars");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // import routers
-const { admimRouter } = require("./routes/admin");
+const { adminRouter } = require("./routes/admin");
 const { shopRouter } = require("./routes/shop");
 
 // Json body parser
@@ -21,13 +21,14 @@ app.use(express.json());
 //     layoutsDir: "views/layouts",
 //   })
 // );
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 
 app.use(express.static(__dirname + "/public"));
 
 // Use Router
-app.use(admimRouter);
+app.use(adminRouter);
 app.use(shopRouter);
 
 // router run when error

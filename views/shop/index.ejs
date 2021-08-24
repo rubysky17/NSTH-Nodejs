@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../includes/head') %>
+
+  <body>
+    <%- include('../includes/navigator')%>
+
+    <main>
+      <h1>My Products</h1>
+      <p>List of all the products...</p>
+
+      <% if (prods.length > 0) { %> <% for (let product of prods ) { %>
+
+      <div class="card container-card">
+        <h1 class="title-card"><%= product.title %></h1>
+        <img
+          src="<%= product.imageUrl %>"
+          alt="<%= product.title %>"
+          class="img-fluid"
+        />
+        <p class="description-card"><%= product.description %></p>
+        <p class="price-card">$<%= product.price %></p>
+
+        <div class="button-container">
+          <form class="product-form" action="/delete-product" method="POST">
+            <button class="btn btn-delete">Thêm giỏ hàng</button>
+          </form>
+        </div>
+      </div>
+
+      <% } %> <% } else { %>
+
+      <h1>Không có sản phẩm nào</h1>
+
+      <% } %>
+    </main>
+  </body>
+</html>

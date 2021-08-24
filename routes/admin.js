@@ -3,16 +3,16 @@ const adminRouter = express.Router();
 const {
   renderAddProduct,
   addProduct,
-} = require("../controllers/Product-controller");
-
-const products = [];
+  renderProducts,
+} = require("../controllers/Admin.controller");
 
 // /admin/add-product => GET
 adminRouter.get("/add-product", renderAddProduct);
+
+adminRouter.get("/admin-product", renderProducts);
 // /admin/add-product => POST
 adminRouter.post("/add-product", addProduct);
 
 module.exports = {
   adminRouter,
-  products,
 };

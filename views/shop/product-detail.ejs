@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../includes/head') %>
+
+  <body>
+    <%- include('../includes/navigator')%>
+
+    <main>
+      <div class="container">
+        <h1>Chi tiết sản phẩm</h1>
+
+        <div class="row">
+          <div class="card col-12 m-3" style="width: 18rem">
+            <img
+              src="<%= prods.imageUrl %>"
+              class="card-img-top"
+              alt="<%= prods.title %>"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= prods.title %></h5>
+
+              <p class="card-text">$<%= prods.price %></p>
+
+              <p class="card-text"><%= prods.description %></p>
+
+              <form action="/cart" method="post">
+                <button type="submit" class="btn btn-primary">
+                  Thêm giỏ hàng
+                </button>
+
+                <input type="hidden" name="produccId" value="<%= prods.id %>" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -31,8 +31,32 @@ const addProduct = (req, res, next) => {
   res.redirect("/");
 };
 
+const renderEditProduct = (req, res, next) => {
+  // Check query xem có ở chế độ edit hay không
+  const editMode = req.query.edit;
+  // Get Id product
+  const { productId } = req.params;
+
+  if (!editMode) {
+    return res.redirect("/");
+  }
+
+  Product.findById(productId, (product) => {
+    if (!product) {
+      return res.redirect("/");
+    }
+    res.render("admin/edit-product", {
+      titleDoc: "Edit Product",
+      path: "/edit-product",
+      editing: true,
+      product: product,
+    });
+  });
+};
+
 module.exports = {
   renderAddProduct,
   addProduct,
   renderProducts,
+  renderEditProduct,
 };

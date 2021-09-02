@@ -6,35 +6,43 @@
     <%- include('../includes/navigator')%>
 
     <main>
-      <h1>My Products</h1>
-      <p>List of all the products...</p>
+      <div class="container">
+        <h1>Danh sách sản phẩm</h1>
+        <p>Danh sách tất cả sản phẩm</p>
 
-      <% if (prods.length > 0) { %> <% for (let product of prods ) { %>
+        <div class="row">
+          <% if (prods.length > 0) { %> <% for (let product of prods ) { %>
 
-      <div class="card container-card">
-        <h1 class="title-card"><%= product.title %></h1>
-        <img
-          src="<%= product.imageUrl %>"
-          alt="<%= product.title %>"
-          class="img-fluid"
-        />
-        <p class="description-card"><%= product.description %></p>
-        <p class="price-card">$<%= product.price %></p>
+          <div class="card col-4 m-3" style="width: 18rem">
+            <img
+              src="<%= product.imageUrl %>"
+              class="card-img-top"
+              alt="<%= product.title %>"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= product.title %></h5>
 
-        <div class="button-container">
-          <a class="btn btn-edit" href="/edit-products">Sửa</a>
+              <p class="card-text">$<%= product.price %></p>
 
-          <form class="product-form" action="/delete-product" method="POST">
-            <button class="btn btn-delete">Xóa</button>
-          </form>
+              <p class="card-text"><%= product.description %></p>
+
+              <a href="/edit-product/<%= product.id %>" class="btn btn-warning"
+                >Sửa</a
+              >
+
+              <a href="/delete-product/<%= product.id %>" class="btn btn-danger"
+                >Xóa</a
+              >
+            </div>
+          </div>
+
+          <% } %> <% } else { %>
+
+          <h1>Không có sản phẩm nào</h1>
+
+          <% } %>
         </div>
       </div>
-
-      <% } %> <% } else { %>
-
-      <h1>Không có sản phẩm nào</h1>
-
-      <% } %>
     </main>
   </body>
 </html>

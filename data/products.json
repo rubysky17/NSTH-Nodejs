@@ -1,4 +1,44 @@
-[{"title":"Quần áo","price":"99","imageUrl":"http://file.hstatic.net/1000192516/file/shop-quan-ao-nam-sai-gon_3658feeca29c49d493c6c91198b3051b_grande.jpg",
+[
+    {
+        "id": "1",
+        "title": "Quần áo",
+        "price": "99",
+        "imageUrl": "http://file.hstatic.net/1000192516/file/shop-quan-ao-nam-sai-gon_3658feeca29c49d493c6c91198b3051b_grande.jpg",
         "description": "Đây là quần áo xịn"
+    },
+    {
+        "id": "2",
+        "title": "Sách vở ",
+        "price": "50",
+        "imageUrl": "https://guihangxachtaydiuc.files.wordpress.com/2015/10/book1.png?w=584",
+        "description": "Đây là sách vở"
+    },
+    {
+        "id": "3",
+        "title": "Điện thoại",
+        "price": "500",
+        "imageUrl": "https://cdn.fptshop.com.vn/Uploads/Originals/2020/12/17/637437951489370946_samsung-a12-xanh-dd.png",
+        "description": "Điện thoại smartphone"
+    },
+    {
+        "id": "4",
+        "title": "Iphone 11",
+        "price": "900",
+        "imageUrl": "https://techland.com.vn/wp-content/uploads/2019/09/apple-iphone-11-7.jpg",
+        "description": "Đây là iphone 11"
+    },
+    {
+        "id": "5",
+        "title": "Vin Phone",
+        "price": "650",
+        "imageUrl": "https://cdn.brvn.vn/news/1280px/2019/19493_19493-3.jpg",
+        "description": "Điện thoại đến từ VN"
+    },
+    {
+        "title": "Iphone X",
+        "price": "450",
+        "imageUrl": "https://cdn1.viettelstore.vn/images/Product/ProductImage/medium/1453042981.jpeg",
+        "description": "Iphone X xịn xò",
+        "id": "8"
     }
 ]

@@ -6,27 +6,51 @@
     <%- include('../includes/navigator')%>
 
     <main>
-      <h1>My Products</h1>
-      <p>List of all the products...</p>
+      <div class="container">
+        <h1>Danh sách sản phẩm</h1>
+        <p>Danh sách tất cả sản phẩm</p>
 
-      <% if (prods.length > 0) { %> <% for (let product of prods ) { %>
+        <div class="row">
+          <% if (prods.length > 0) { %> <% for (let product of prods ) { %>
 
-      <div class="card container-card">
-        <h1 class="title-card"><%= product.title %></h1>
-        <img
-          src="https://i.pinimg.com/736x/5f/82/fa/5f82faacd6b544ad86d2fc3fe9e8c431.jpg"
-          alt="https://i.pinimg.com/736x/5f/82/fa/5f82faacd6b544ad86d2fc3fe9e8c431.jpg"
-          class="img-fluid"
-        />
-        <p class="description-card">Đây là cái card</p>
-        <button class="btn-card">Mua ngay</button>
+          <div class="card col-4 m-3" style="width: 18rem">
+            <img
+              src="<%= product.imageUrl %>"
+              class="card-img-top"
+              alt="<%= product.title %>"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= product.title %></h5>
+
+              <p class="card-text">$<%= product.price %></p>
+
+              <p class="card-text"><%= product.description %></p>
+
+              <a href="/product/<%= product.id %>" class="btn btn-secondary"
+                >Xem chi tiết</a
+              >
+
+              <form action="/cart" method="post" class="mt-3">
+                <button type="submit" class="btn btn-primary">
+                  Thêm giỏ hàng
+                </button>
+
+                <input
+                  type="hidden"
+                  name="productId"
+                  value="<%= product.id %>"
+                />
+              </form>
+            </div>
+          </div>
+
+          <% } %> <% } else { %>
+
+          <h1>Không có sản phẩm nào</h1>
+
+          <% } %>
+        </div>
       </div>
-
-      <% } %> <% } else { %>
-
-      <h1>Không có sản phẩm nào</h1>
-
-      <% } %>
     </main>
   </body>
 </html>
